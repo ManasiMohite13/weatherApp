@@ -39,3 +39,35 @@ let weather = {
         this.fetchWeather(document.querySelector(".search-bar").value);
       },
     };
+
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      document.body.classList.toggle("light-mode");
+      
+      // Change button icon based on mode
+      if (document.body.classList.contains("light-mode")) {
+          this.innerText = "🌞"; // Sun icon for light mode
+          localStorage.setItem("theme", "light");
+      } else {
+          this.innerText = "🌙"; // Moon icon for dark mode
+          localStorage.setItem("theme", "dark");
+      }
+  });
+  
+  // Preserve theme on page reload
+  window.onload = function () {
+      if (localStorage.getItem("theme") === "light") {
+          document.body.classList.add("light-mode");
+          document.querySelector(".theme-toggle").innerText = "🌞";
+      }
+  };
+  
+
+
+
+
+
+
+
+
+
+

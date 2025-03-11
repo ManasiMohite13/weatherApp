@@ -1,3 +1,20 @@
+:root {
+  --bg-color: #222;
+  --text-color: white;
+  --card-bg: rgba(0, 0, 0, 0.3);
+}
+.light-mode {
+  --bg-color: #f0f0f0;
+  --text-color: #222;
+  --card-bg: rgba(255, 255, 255, 0.8);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -5,13 +22,16 @@ body {
   height: 100vh;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: #222;
+  background:var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.5s, color 0.5s;
   background-image: url('https://source.unsplash.com/1600x900/?landscape');
   font-size: 100%;
 }
 
 .card {
-  background: rgba( 0, 0, 0, 0.30 );
+  /* background: rgba( 0, 0, 0, 0.30 ); */
+  background:var(--card-bg);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 11.5px );
   -webkit-backdrop-filter: blur( 11.5px );
